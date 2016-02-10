@@ -3,48 +3,21 @@
 	<p>This Q&amp;A site is dedicated to questions about the history of the Universe</p>
 </div>
 <div class="container">
+	<% @questions.each do |q| %>
 	<div class="media">
 		<div class="media-left">
 			<a href="#">
-				<img src="http://www.gravatar.com/avatar/424242" class="media-object">
+				<img src="<%= q.gravatar %>" class="media-object">
 			</a>
 		</div>
 		<div class="media-body">
-			<h4 class="media-heading">user@email.com asked:</h4>
-			lsdakd aslkdjlasd sadlkasdlasd asdkasd asdkasdjk adsakdj lasdj alsd jasjd lasj dlasdj lsjad jals djxzclzjc cj xkjb b kjhsab kjhbk bj bkjbjfkhsk fadhjk jahg djk gkjakj ksghkdj ghskhkb jvdakjnvjnlsan kndsk jnkf nkjfsdhhkf sdhj n dsjnfkjn dksn kjdsh kjhk dfndnfkjdnk nk nk nkndf kjnkfdan kfndskjn skjdanjkn jknk.
+			<h4 class="media-heading"><%= q.email %> asked:</h4>
+			<div><%= time_ago_in_words q.created_at %> ago</div>
+			<%= q.body %>
 			<div>
-				<a href="/questions/12" class="btn btn-success btn-xs">View Answers</a>
+				<a href="<%= question_path(q) %>" class="btn btn-success btn-xs">View Answers</a>
 			</div>
 		</div>
 	</div>
-
-	<div class="media">
-		<div class="media-left">
-			<a href="#">
-				<img src="http://www.gravatar.com/avatar/424242" class="media-object">
-			</a>
-		</div>
-		<div class="media-body">
-			<h4 class="media-heading">user1@email.com asked:</h4>
-			lsdakd aslkdjlasd sadlkasdlasd asdkasd asdkasdjk adsakdj lasdj alsd jasjd lasj dlasdj lsjad jals djxzclzjc cj xkjb b kjhsab kjhbk bj bkjbjfkhsk fadhjk jahg djk gkjakj ksghkdj ghskhkb jvdakjnvjnlsan kndsk jnkf nkjfsdhhkf sdhj n dsjnfkjn dksn kjdsh kjhk dfndnfkjdnk nk nk nkndf kjnkfdan kfndskjn skjdanjkn jknk.
-			<div>
-				<a href="/questions/12" class="btn btn-success btn-xs">View Answers</a>
-			</div>
-		</div>
-	</div>
-
-	<div class="media">
-		<div class="media-left">
-			<a href="#">
-				<img src="http://www.gravatar.com/avatar/424242" class="media-object">
-			</a>
-		</div>
-		<div class="media-body">
-			<h4 class="media-heading">user2@email.com asked:</h4>
-			lsdakd aslkdjlasd sadlkasdlasd asdkasd asdkasdjk adsakdj lasdj alsd jasjd lasj dlasdj lsjad jals djxzclzjc cj xkjb b kjhsab kjhbk bj bkjbjfkhsk fadhjk jahg djk gkjakj ksghkdj ghskhkb jvdakjnvjnlsan kndsk jnkf nkjfsdhhkf sdhj n dsjnfkjn dksn kjdsh kjhk dfndnfkjdnk nk nk nkndf kjnkfdan kfndskjn skjdanjkn jknk.
-			<div>
-				<a href="/questions/12" class="btn btn-success btn-xs">View Answers</a>
-			</div>
-		</div>
-	</div>
+	<% end %>
 </div>
