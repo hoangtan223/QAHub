@@ -24,5 +24,7 @@ test:
   database: HU_test
 
 production:
-  <<: *default
+  adapter: postgresql
+  pool: 5
   database: HU_production
+  timeout: 5000
