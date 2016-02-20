@@ -52,4 +52,4 @@ group :production do
 end
 
 gem 'sucker_punch'
-
+gem 'devise'
